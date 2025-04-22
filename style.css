@@ -1,108 +1,48 @@
-/* Reset + Font */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Orbitron', sans-serif;
-    background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
-    color: #f4f4f4;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-  }
-  
-  /* Header */
-  .intro {
-    padding: 80px 40px 60px;
-    text-align: center;
-    background: #111;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
-    border-bottom: 3px solid red;
-  }
-  
-  .intro h1 {
-    font-size: 48px;
-    font-weight: 800;
-    margin: 0;
-    color: red;
-    text-shadow: 0 2px 4px rgba(255, 0, 0, 0.4);
-    letter-spacing: 2px;
-  }
-  
-  .intro p {
-    font-size: 18px;
-    margin-top: 12px;
-    color: #ccc;
-  }
-  
-  /* Track Container */
-  #track-container {
-    position: relative;
-    width: 100%;
-    height: 3600px;
-    background: linear-gradient(#1a1a1a, #0f0f0f);
-  }
-  
-  /* Track SVG */
-  svg#raceTrack {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1000px;
-    height: 3500px;
-    pointer-events: none;
-  }
-  
-  #trackPath {
-    stroke: #222;
-    stroke-width: 40;
-    stroke-linecap: round;
-    filter: drop-shadow(0px 0px 10px rgba(255, 0, 0, 0.3));
-  }
-  
-  #centerLine {
-    stroke: #ccc;
-    stroke-width: 4;
-    stroke-dasharray: 20, 20;
-    opacity: 0.6;
-  }
-  
-  /* Car Marker */
-  #car {
-    fill: red;
-    stroke: white;
-    stroke-width: 2;
-    filter: drop-shadow(0px 0px 4px red);
-    transition: all 0.05s ease-out;
-  }
-  
-  /* Checkpoint Boxes */
-  .checkpoint {
-    position: absolute;
-    width: 300px;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 16px 20px;
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2);
-    font-size: 18px;
-    color: #fff;
-    border-left: 5px solid red;
-    transition: transform 0.3s ease;
-  }
-  
-  .checkpoint:hover {
-    transform: scale(1.03);
-  }
-  
-  .checkpoint.left {
-    left: 60px;
-    text-align: right;
-  }
-  
-  .checkpoint.right {
-    right: 60px;
-    text-align: left;
-  }
-  
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: #111;
+  color: #f4f4f4;
+  overflow-x: hidden;
+}
+
+.intro {
+  position: sticky;
+  top: 0;
+  background: #111;
+  padding: 40px;
+  text-align: center;
+  z-index: 10;
+}
+
+.intro h1 {
+  margin: 0;
+  color: red;
+  font-size: 2rem;
+}
+
+.intro p {
+  margin: 8px 0 0;
+  color: #ccc;
+}
+
+#track-container {
+  width: 100%;
+  height: 200vh;
+  /* plenty of scroll */
+  background: linear-gradient(#1a1a1a, #0f0f0f);
+}
+
+svg#raceTrack {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 100vh;
+  /* pivot transforms around the startDot */
+  transform-origin: 567px 97px;
+  /* smooth transitions */
+  transition: transform 0.25s ease-out;
+  pointer-events: none;
+}
